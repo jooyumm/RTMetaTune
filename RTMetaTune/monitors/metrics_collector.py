@@ -21,10 +21,12 @@ log_file = find_latest_log()
 if log_file and os.path.getsize(log_file) > 0:
     try:
         columns = [
-            "period_start", "period_end", "job_end", "job_deadline", "deadline_met",
-            "job_elapsed", "job_utilization", "job_density",
-            "l1_references", "l1_refills", "l2_references", "l2_refills", "inst_retired"
-        ]
+                "period_start", "period_end", "job_end", "job_deadline", "job_elapsed",
+                "job_utilization", "job_density",
+                "job_release", "job_finish",
+                "execution_time", "deadline_met",
+                "l1_references", "l1_refills"
+                ]
         df = pd.read_csv(log_file, header=None, names=columns)
         df = df.apply(pd.to_numeric, errors='coerce').dropna()
 
