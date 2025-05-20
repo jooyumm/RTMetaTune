@@ -1,0 +1,6 @@
+core: 1
+deadline: 0.0005
+log_level: 2
+period: 0.1
+target_deadline_miss: 0.0
+task_count: 100
